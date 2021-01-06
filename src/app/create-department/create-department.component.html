@@ -1,0 +1,183 @@
+
+
+<div class="container-fluid">
+  <div class="row">
+
+    <div class="col-12 ml-auto pt-3 pl-md-5 pl-new bg-white-row pt-3">
+
+      <div class="content">
+        <!--content inner-->
+        <div class="content__inner">
+
+          <div>
+            <!--multisteps-form-->
+            <div class="multisteps-form">
+              <!--progress bar-->
+              <!-- <div class="row">
+                <div class="col-12 col-lg-8 ml-auto mr-auto mb-4 d-none">
+                  <div class="multisteps-form__progress">
+                    <button class="multisteps-form__progress-btn" type="button" title="User Info">Basic Info</button>
+                    <button class="multisteps-form__progress-btn" type="button" title="Address" >Exam Setting</button>
+                    <button class="multisteps-form__progress-btn" type="button" title="Order Info" >Order Info</button>
+
+                  </div>
+                </div> -->
+              </div> 
+
+              <!--form panels-->
+              <div class="row">
+               <!-- <div class="col-12 col-lg-9 m-auto">
+                <div class="mb-2 mt-2 p-1 float-left">
+                  <button type="button" class="btn btn-dark btn-sm class-custom" (click)="movePage()">+ Create</button>
+                </div>
+               </div> -->
+               
+                <div class="col-12 col-lg-9 m-auto">
+                  <div class="tab">
+                    <button class="tablinks text-uppercase active" ><i class="bi bi-plus"></i> Job</button>
+                    <button class="tablinks text-uppercase" ><img src="./assets/imgs/plus.svg" width="20"> User</button>
+                    <button class="tablinks text-uppercase" > <img src="./assets/imgs/plus.svg" width="20"> Department</button>
+                    <button class="tablinks text-uppercase" ><img src="./assets/imgs/plus.svg" width="20"> Project</button>
+                  </div>
+                  <!-- <form class="multisteps-form__form" [formGroup]="addJob">
+                    <div class="multisteps-form__panel shadow p-4 rounded bg-white" data-animation="scaleIn"
+                      [ngClass]="{'js-active':showtype == 'type7'}">
+                      <h5 class="multisteps-form__title">CREATE JOB</h5>
+                      <div class="multisteps-form__content">
+                        <div class="form-row mt-4">
+
+
+                          <div class="col-12 col-sm-6">
+                            <div class="form-group">
+                              <label>Employee</label>
+                              <select class="form-control rounded-0" id="sel1" formControlName="employee">
+                                <option [ngValue]="null" disabled selected="true">Select Employee</option>
+                                <option *ngFor="let ct of from_list" [value]="ct.id">{{ct.title}}</option>
+                              </select>
+                            </div>
+                            <div *ngIf="j.employee.errors" class="invalid-feedback">
+                              <div *ngIf="j.employee.touched && j.employee.errors.required">Please Select Employee</div>
+                            </div>
+                          </div>
+                          <div class="col-12 col-sm-6">
+                            <div class="form-group">
+                              <label>Department</label>
+                              <select class="form-control rounded-0" id="sel1" formControlName="department">
+                                <option [ngValue]="null" disabled selected="true">Select Department</option>
+                                <option *ngFor="let ct of from_list" [value]="ct.id">{{ct.department}}</option>
+                              </select>
+                            </div>
+                            <div *ngIf="j.department.errors" class="invalid-feedback">
+                              <div *ngIf="j.department.touched && j.department.errors.required">Please Select Department</div>
+                            </div>
+                          </div>
+                          <div class="col-12 col-sm-6">
+                            <div class="form-group">
+                              <label>Project </label>
+                              <select class="form-control rounded-0" id="sel1" formControlName="project">
+                                <option [ngValue]="null" disabled selected="true">Select Project</option>
+                                <option *ngFor="let ct of from_list" [value]="ct.id">{{ct.department}}</option>
+                              </select>
+                            </div>
+                            <div *ngIf="j.project.errors" class="invalid-feedback">
+                              <div *ngIf="j.project.touched && j.project.errors.required">Please Select Project</div>
+                            </div>
+                          </div>
+
+                          
+                        </div>
+                        <div class="button-row d-flex mt-4">
+                          <button class="btn btn-primary btn-lg ml-auto js-btn-next rounded-0" type="submit"
+                            [disabled]="createTest.errors" title="Next" (click)="submit()">SUBMIT</button>
+                        </div>
+                      </div>
+                    </div>
+
+                  </form> -->
+
+                   <form class="multisteps-form__form" [formGroup]="addDept">
+                    <div class="multisteps-form__panel shadow p-4 rounded bg-white" data-animation="scaleIn" >
+                      <h5 class="multisteps-form__title">CREATE Department</h5>
+                      <div class="multisteps-form__content">
+                        <div class="form-row mt-4">
+
+
+                          <div class="col-12 col-sm-6">
+                            <div class="form-group">
+                              <label>Enter a Department</label>
+                              <input class="multisteps-form__input form-control rounded-0" type="text" placehoPolycliniclder="Enter a title" formControlName='department' />
+                            </div>
+                            <div *ngIf="f?.department.errors" class="invalid-feedback">
+                              <div *ngIf="f?.department.touched && f?.department.errors.required">Please Enter department
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="button-row d-flex mt-4">
+                          <button class="btn btn-primary btn-lg ml-auto js-btn-next rounded-0" type="submit"
+                            [disabled]="createTest.errors" title="Next" (click)="submit()">SUBMIT</button>
+                        </div>
+                      </div>
+                    </div>
+
+                  </form>
+
+                 <!-- <form class="multisteps-form__form" [formGroup]="createTest">
+                    <div class="multisteps-form__panel shadow p-4 rounded bg-white" data-animation="scaleIn"
+                      [ngClass]="{'js-active':showtype == 'type7'}">
+                      <h5 class="multisteps-form__title">CREATE Department</h5>
+                      <div class="multisteps-form__content">
+                        <div class="form-row mt-4">
+
+
+                          <div class="col-12 col-sm-6">
+                            <div class="form-group">
+                              <label>Enter a Department</label>
+                              <input class="multisteps-form__input form-control rounded-0" type="text"
+                                placehoPolycliniclder="Enter a title" formControlName="department" />
+                            </div>
+                            <div *ngIf="f.department.errors" class="invalid-feedback">
+                              <div *ngIf="f.department.touched && f.department.errors.required">Please Enter department
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="button-row d-flex mt-4">
+                          <button class="btn btn-primary btn-lg ml-auto js-btn-next rounded-0" type="submit"
+                            [disabled]="createTest.errors" title="Next" (click)="submit()">SUBMIT</button>
+                        </div>
+                      </div>
+                    </div>
+
+                  </form>
+
+                  <form class="multisteps-form__form" [formGroup]="createTest">
+                    <div class="multisteps-form__panel shadow p-4 rounded bg-white" data-animation="scaleIn"
+                      [ngClass]="{'js-active':showtype == 'type7'}">
+                      <h5 class="multisteps-form__title">CREATE Department</h5>
+                      <div class="multisteps-form__content">
+                        <div class="form-row mt-4">
+
+
+                          <div class="col-12 col-sm-6">
+                            <div class="form-group">
+                              <label>Enter a Department</label>
+                              <input class="multisteps-form__input form-control rounded-0" type="text"
+                                placehoPolycliniclder="Enter a title" formControlName="department" />
+                            </div>
+                            <div *ngIf="f.department.errors" class="invalid-feedback">
+                              <div *ngIf="f.department.touched && f.department.errors.required">Please Enter department
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="button-row d-flex mt-4">
+                          <button class="btn btn-primary btn-lg ml-auto js-btn-next rounded-0" type="submit"
+                            [disabled]="createTest.errors" title="Next" (click)="submit()">SUBMIT</button>
+                        </div>
+                      </div>
+                    </div>
+
+                  </form> -->
+                </div>
+              </div>

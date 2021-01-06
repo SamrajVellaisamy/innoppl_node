@@ -1,0 +1,81 @@
+<div class="row" *ngIf="request != 'USER' && request != 'PROFILE'">
+  <div class="col-lg-12">
+     <!-- <div class="m-2 float-right">
+        <select class="form-control" id="sel1 inlineFormCustomSelect" name="sellist1" (change)="reportsView($event.target.value,applyDate,searchUser)">
+           <option value="ASSIGNED">MOH</option>
+           <option value="ACCIDENT">ACCIDENT</option>
+           <option value="FUEL">FUEL</option>
+           <option value="LEAVE">LEAVE</option>
+           <option value="RIDE">HAND OVER</option>
+           <option value="ALL" selected>ALL</option>
+        </select>
+     </div> -->
+
+     <!-- <div class="m-2 float-right">
+      <select class="form-control" id="sel1 inlineFormCustomSelect" name="sellist1" (change)="reportsView($event.target.value,applyDate,searchUser)">
+         <option value="ASSIGNED">MOH</option>
+         <option value="ACCIDENT">ACCIDENT</option>
+         <option value="FUEL">FUEL</option>
+         <option value="LEAVE">LEAVE</option>
+         <option value="RIDE">HAND OVER</option>
+         <option value="ALL" selected>ALL</option>
+      </select>
+   </div> -->
+
+   
+   <div class="mb-2 mt-2 p-1 float-left">
+      <button type="button" class="btn btn-dark btn-sm" (click)="movePage()">+ Create</button>
+    </div>
+
+   <div class="mb-2 mt-2 p-1 float-right">
+      <button type="button" class="btn btn-dark btn-sm" (click)="submitView()">VIEW</button>
+    </div>
+
+   <div class="m-2 float-right">
+    <select class="form-control" id="sel1 inlineFormCustomSelect" name="sellist1" [(ngModel)]="s_project">
+     
+       <option *ngFor="let pro of project;" [value]="pro.id">{{pro.project}}</option>
+       <option [value]="s_project">Select project</option>
+    </select>
+ </div>
+
+ <div class="m-2 float-right">
+  <select class="form-control" id="sel1 inlineFormCustomSelect" name="sellist1" [(ngModel)]="s_dept">
+    <option [value]="s_dept">Select Department</option>
+     <option *ngFor="let dept of department;" [value]="dept.id">{{dept.department}}</option>
+  </select>
+</div>
+
+
+     
+     <div class="table-responsive">
+        <table class="table table-bordered text-lg-center text-md-left bg-white margin_bottom" >
+           <tr>
+              <!-- <th>STATUS</th>
+                 <th>DUE</th> -->
+                 <th>ID</th>
+              <th>EMPLOYEE NAME</th>
+              <th>DEPARTMENT</th>
+              <th>PROJECT</th>
+              <th>DATE</th>
+              <th></th>
+           </tr>
+           <tr class="tab-head" *ngFor="let report of dataList;">
+              <!-- <td><a href="#"  class="btn-danger btn-sm">OVERDUE</a></td>
+                 <td><span class="text-danger">Due 43 days ago </span></td> -->
+              <td>{{report?.id ? report.id : "" }}</td>
+              <td>{{report.employee_name ? report.employee_name : "Empty" }} </td>
+              <td>{{report.dept_name ? report.dept_name : "Empty" }}</td>
+              <td>{{report.project ? report.project : "Empty"}}</td>
+              <td>{{report.date ? report.date.split('T')[0] : "Empty"}}</td>
+              <td>
+                 <button type="button" class="btn btn-dark btn-sm" [routerLink]="['/overview',{'date':report.date,'user':report.user_id ? report.user_id : report.assign_to}]">VIEW</button>
+                 <!-- <select class="form-control newsel p-0" id="sel1" name="sellist1">
+                    <option value="view">View</option> 
+                    </select> -->
+              </td>
+           </tr>
+        </table>
+     </div>
+  </div>
+</div>
