@@ -1,8 +1,8 @@
 var connection = {
-    host: 'localhost',
-    user: 'root',
-    password: '',
-    database: 'inn_project'
+    host: 'bez3cqwjkhsorjafjqya-mysql.services.clever-cloud.com',
+    user: 'uqxktxqgaezmqiqs',
+    password: 'AWel4hozWmMYc9lCW9ix',
+    database: 'bez3cqwjkhsorjafjqya'
 };
 
 module.exports = connection;

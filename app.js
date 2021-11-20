@@ -47,6 +47,6 @@ app.get('/', (req, res) => {
   res.send('Hi!')
 })
 
-app.listen(3000, () => console.log('Server ready'))
+app.listen(process.env.PORT || 3001, () => console.log('Server ready'))
 
 module.exports = app;
